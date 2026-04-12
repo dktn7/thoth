@@ -1,16 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
+import ThothHeader from "@/components/ThothHeader";
+import DocumentThumbnails from "@/components/DocumentThumbnails";
+import PaperEditor from "@/components/PaperEditor";
+import NeuralBrainViewer from "@/components/NeuralBrainViewer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const ResizeHandle = () => (
+  <PanelResizeHandle className="w-px bg-border hover:bg-primary/30 transition-colors data-[resize-handle-active]:bg-primary/50" />
+);
+
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="h-screen flex flex-col overflow-hidden">
+      <ThothHeader />
+      <PanelGroup direction="horizontal" className="flex-1">
+        <Panel defaultSize={15} minSize={10} maxSize={25}>
+          <DocumentThumbnails />
+        </Panel>
+        <ResizeHandle />
+        <Panel defaultSize={60} minSize={30}>
+          <PaperEditor />
+        </Panel>
+        <ResizeHandle />
+        <Panel defaultSize={25} minSize={15} maxSize={40}>
+          <NeuralBrainViewer />
+        </Panel>
+      </PanelGroup>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
