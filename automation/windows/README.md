@@ -68,3 +68,12 @@ It does not merge pull requests, resolve conflicts, push automatically, run inde
 ## Recovery
 
 The runner creates worktrees under the configured worktree root. If a task is abandoned, inspect the path and branch first, then remove the worktree using normal Git commands. Do not delete a worktree or branch while a provider process is still running.
+
+
+## Freebuff integration
+
+Freebuff is a full coding agent with its own interactive CLI, not merely an API model endpoint. Its documented Windows flow is to install the CLI, change into the project, and start the interactive agent. Current Freebuff CLI discussions indicate that headless, print, JSON, and piped-stdin execution are not supported as a stable interface.
+
+For this reason, do not configure the POC to automate Freebuff by simulating terminal input. Use Freebuff manually inside the task worktree, or use Freebuff Desktop/Cloud with its own visible approval and workspace controls. After the supervised run, return to this runner for allowlist checks, validation, branch inspection, and optional draft PR creation.
+
+Freebuff also documents project-level agent and MCP trust behavior. Keep those features disabled or explicitly reviewed for unattended experiments; a repository may contain code that would otherwise be loaded or executed by an agent.
