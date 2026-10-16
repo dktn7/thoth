@@ -17,9 +17,7 @@ function Resolve-RepoRoot([string] $ConfiguredRoot) {
   return (Resolve-Path -LiteralPath $git.Trim()).Path
 }
 function Assert-RelativeSafe([string] $Value, [string] $Field) {
-  if ([string]::IsNullOrWhiteSpace($Value) -or [IO.Path]::IsPathRooted($Value) -or $Value -match '(^|[\\/])\.\.([\\/]|$)') {
-    Fail "$Field must be a non-empty relative path without '..': $Value"
-  }
+  if ([string]::IsNullOrWhiteSpace($Value) -or [IO.Path]::IsPathRooted($Value) -or $Value -match '(^|[\\/])\.\.([\\/]|$)') { Fail "$Field must be a non-empty relative path without '..': $Value" }
 }
 function Get-ChangedFiles([string] $Worktree) {
   $lines = @(git -C $Worktree status --short --untracked-files=all)
@@ -41,17 +39,16 @@ $tasks = @($config.tasks)
 if ($TaskId) { $tasks = @($tasks | Where-Object id -eq $TaskId) }
 if ($tasks.Count -ne 1) { Fail "select exactly one task with -TaskId; this POC does not fan out unattended work" }
 $task = $tasks[0]
-foreach ($field in @("id","branch","worktree","prompt","allowlist","validation","maxIterations","maxMinutes","maxChangedFiles")) {
-  if ($null -eq $task.$field) { Fail "task is missing '$field'" }
-}
+foreach ($field in @("id","branch","worktree","prompt","allowlist","validation","maxIterations","maxMinutes","maxChangedFiles")) { if ($null -eq $task.$field) { Fail "task is missing '$field'" } }
 Assert-RelativeSafe $task.worktree "task.worktree"
-if ($task.maxIterations -lt 1 -or $task.maxIterations -gt 3) { Fail "maxIterations must be between 1 and 3" }
+if ($task.maxIterations -ne 1) { Fail "this POC supports exactly one provider iteration" }
 if ($task.maxMinutes -lt 1 -or $task.maxMinutes -gt 30) { Fail "maxMinutes must be between 1 and 30" }
 if ($task.maxChangedFiles -lt 1 -or $task.maxChangedFiles -gt 20) { Fail "maxChangedFiles must be between 1 and 20" }
 if (@($task.allowlist).Count -eq 0) { Fail "allowlist must not be empty" }
 $worktreeRoot = Join-Path $repoRoot $config.worktreeRoot
 $worktreePath = Join-Path $worktreeRoot $task.worktree
-$branchExists = git -C $repoRoot show-ref --verify --quiet ("refs/heads/" + $task.branch)
+git -C $repoRoot show-ref --verify --quiet ("refs/heads/" + $task.branch)
+$branchExists = ($LASTEXITCODE -eq 0)
 $pathExists = Test-Path -LiteralPath $worktreePath
 Write-Host "THOTH unattended POC"
 Write-Host "  repo:      $repoRoot"
@@ -59,14 +56,11 @@ Write-Host "  task:      $($task.id)"
 Write-Host "  branch:    $($task.branch)"
 Write-Host "  worktree:  $worktreePath"
 Write-Host "  allowlist: $(@($task.allowlist) -join ', ')"
-Write-Host "  limits:    $($task.maxIterations) iteration(s), $($task.maxMinutes) minute(s), $($task.maxChangedFiles) changed file(s)"
+Write-Host "  limits:    1 iteration, $($task.maxMinutes) minute(s), $($task.maxChangedFiles) changed file(s)"
 Write-Host "  mode:      $(if ($Apply) { 'APPLY' } else { 'DRY-RUN' })"
-if (-not $Apply) {
-  Write-Host "Dry-run complete. No branch, worktree, provider, or PR was changed."
-  exit 0
-}
+if (-not $Apply) { Write-Host "Dry-run complete. No branch, worktree, provider, or PR was changed."; exit 0 }
 if ($pathExists) { Fail "worktree path already exists; inspect it before reusing: $worktreePath" }
-if ($branchExists -eq 0) { Fail "branch already exists; this POC will not reuse it: $($task.branch)" }
+if ($branchExists) { Fail "branch already exists; this POC will not reuse it: $($task.branch)" }
 if ($CreateDraftPr -and -not (Get-Command gh -ErrorAction SilentlyContinue)) { Fail "gh is required for -CreateDraftPr" }
 New-Item -ItemType Directory -Force -Path $worktreeRoot | Out-Null
 git -C $repoRoot worktree add -b $task.branch $worktreePath $config.baseBranch
@@ -74,8 +68,9 @@ if ($LASTEXITCODE -ne 0) { Fail "git worktree creation failed" }
 $env:THOTH_AGENT_TASK_PROMPT = $task.prompt
 if (-not $env:THOTH_AGENT_MODEL) { Fail "set THOTH_AGENT_MODEL before -Apply" }
 $providerArgs = @($config.provider.arguments | ForEach-Object {
-  $_ -replace '\$env:THOTH_AGENT_MODEL', $env:THOTH_AGENT_MODEL
-  $_ -replace '\$env:THOTH_AGENT_TASK_PROMPT', $env:THOTH_AGENT_TASK_PROMPT
+  $arg = $_
+  $arg = $arg.Replace('$env:THOTH_AGENT_MODEL', $env:THOTH_AGENT_MODEL)
+  $arg.Replace('$env:THOTH_AGENT_TASK_PROMPT', $env:THOTH_AGENT_TASK_PROMPT)
 })
 $provider = $config.provider.command
 $started = Get-Date
