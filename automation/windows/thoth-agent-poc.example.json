@@ -1,0 +1,22 @@
+{
+  "repositoryRoot": ".",
+  "worktreeRoot": ".thoth-agent-worktrees",
+  "baseBranch": "main",
+  "provider": {
+    "command": "ollama",
+    "arguments": ["run", "$env:THOTH_AGENT_MODEL", "$env:THOTH_AGENT_TASK_PROMPT"]
+  },
+  "tasks": [
+    {
+      "id": "docs-proof",
+      "branch": "automation/task-docs-proof",
+      "worktree": "docs-proof",
+      "prompt": "Make one small documentation-only improvement requested by the operator. Do not edit application code, dependencies, workflows, credentials, or files outside the allowlist.",
+      "allowlist": ["docs/"],
+      "validation": ["git diff --check"],
+      "maxIterations": 1,
+      "maxMinutes": 10,
+      "maxChangedFiles": 4
+    }
+  ]
+}
