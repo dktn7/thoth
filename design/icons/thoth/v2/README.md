@@ -1,19 +1,18 @@
 # THOTH icon library — Polished candidates v2
 
-Status: design candidates. **The identity direction for Seshat and AI Review is approved; individual vector shapes remain subject to final visual approval.**
+**Correction notice (27 Oct 2026):** The user **rejected the AI Review v2 SVG** and locked the **blended navy + forest** theme. The original Canva polished sheet remains a historic design proposal; see [CORRECTION_2026-10-27.md](./CORRECTION_2026-10-27.md) for the authoritative update.
 
-- Seshat: historical arch + rosette + staff, based on user-provided historical Seshat photograph; never use the THOTH ibis as Seshat.
-- AI Review: blue human circuitry-face reference; do not confuse with Seshat Insights (native research-backed recommendations).
-- Preserve exact original approved THOTH logo and ibis without regenerating, tracing or recolouring.
-- 16 icons in this folder, 24x24 base, approximately 1.7px stroke, intended for 16/20/24/32px QA, dark and light modes.
-- These SVGs are design assets only, not proof of functioning product features.
-- Source artwork and approval board are archived in the THOTH Canva project:
-  https://www.canva.com/folder/FAHGqaJ-sUA
-- Locked identity record:
-  https://www.canva.com/d/-4botJ1SsVwJj45
-- Polished visual review:
-  https://www.canva.com/d/OiVkqH4HdRpJrPK
+- **Active candidates:** 15 SVGs. The AI Review slot is intentionally **unfilled** pending a redesigned circuit-face glyph and explicit user approval.
+- **Rejected vector (for history ONLY):** `archive/rejected-ai-review-v2.svg`. Do not import, publish or treat it as approved.
+- **Seshat direction (locked):** the user-provided historical **arch + rosette + staff**, **not** the THOTH ibis. The current Seshat SVG remains a candidate requiring final icon-size sign-off.
+- **AI Review direction (locked, vector rejected):** recognisable human **blue circuitry face**, based on the user's exact supplied image. Differentiate from Seshat and native Seshat Insights.
+- **Theme direction (locked):** integrated dark **Navy #101D33 + Forest Teal #123D32 / Deep Forest #0B302B**; complete paper / Mist Teal light mode. Use brand cyan for interaction and lime sparingly for meaningful states.
+- **Source branding (protected):** retain exact original approved full THOTH logo and ibis source assets, unchanged.
+- **Usability:** test 16/20/24/32px, both themes, the existing THOTH editor and Seshat panels; icon-only controls require accessible labels.
+- **Branch status:** design candidate archive only; not part of the production application main branch.
 
-Product-facing labels: Create, Design, Seshat, Seshat Insights, AI Review, Sources, Templates, Publish, Collections, Documents, Relationships, Evidence, Game Design, Comics, Timeline, Assets.
-
-Version 2 has not replaced the original approved brand guideline, and should remain on its feature branch until final visual review.
+Design resources:
+- [THOTH Canva project](https://www.canva.com/folder/FAHGqaJ-sUA)
+- [Locked Seshat and AI Review reference directions](https://www.canva.com/d/-4botJ1SsVwJj45)
+- [New four-page authoritative correction brief](https://www.canva.com/d/UNiRkcGwo92NUrn)
+- [Former six-page polished candidate sheet (partly superseded)](https://www.canva.com/d/OiVkqH4HdRpJrPK)
