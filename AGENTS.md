@@ -34,3 +34,7 @@ Main has a hardcoded BlockNote demo, heading-based tile navigation, an animated 
 ## Source hygiene
 
 External material must be marked formal standard, published framework, professional guidance, community example or THOTH choice, with date/version, licence and applicability noted. Do not copy copyrighted templates or expose private material in fixtures.
+
+## Design handoff and brand authority
+
+Before UI work, read the [walkthrough handoff](docs/design/walkthrough.md) and [brand guidance](docs/assets/brand/README.md). The existing Canva Thoth Brand Kit is authoritative; do not invent exact colours, fonts, logos or icons. Recover the actual approved prototype before treating design details as implementation requirements. Preserve the manual-first connected experience; do not replace working code merely to match a mockup.
