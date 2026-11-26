@@ -49,3 +49,11 @@ Source: [Canva v1.3 User Journeys & Page States (Draft)](https://www.canva.com/d
 | J08 | P1 | Optional AI Review: scoped diff, selective acceptance/rejection and exact undo | Unconfigured/unavailable model, cancellation, scope mismatch |
 
 Build the five P0 journeys against shared content IDs before adding new top-level pages. Preserve identical behaviour across light/dark modes, keyboard/focus paths and explicit error states. The remaining journey contracts and actual interactive prototype still require recovery; this draft is not evidence of implementation.
+
+## Original visual references
+
+- [Workspace concept presentation](https://www.canva.com/d/hhmmqyUgPucLW34), 7 pages.
+- [Approved blended theme correction](https://www.canva.com/d/4gkdILBLijS5sOw), page 3: existing workspace mockups and light/dark design rules.
+- [v1.3 journey and state plan](https://www.canva.com/d/rCGaKjHgZLXKBkv), 6 pages.
+
+These are original Canva design documents, not a replacement for the interactive walkthrough. The connector exposes previews and text but no stable binary export was obtained. Do not embed expiring thumbnail URLs or present concept imagery as current application screenshots.

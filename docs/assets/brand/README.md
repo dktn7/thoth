@@ -57,3 +57,7 @@ Original ibis and wordmark remain unaltered. Seshat uses the historical arch/ros
 - [Forest Teal Palette Extension](https://www.canva.com/d/_nowWeg5PNooB1o): proposed, not blanket approval.
 
 Binary exports, exact typography and final vector files remain outstanding; links are owner-access references, not public CDN assets.
+
+## Repository presentation asset
+
+[repository-banner.svg](repository-banner.svg) is a repository-specific editorial banner using the recovered Canva reference colours (#101D33, #123D32, #F5F6F2, #DDECE6) and approved tagline. It uses generic system font fallbacks; these are **not** approved product typography or a replacement wordmark. The original raster ibis is displayed separately in the README without modification. The banner is newly authored for GitHub, not an original Canva export. Do not use it as a product logo or claim final typography sign-off. The linked Canva workspace/theme/journey designs remain the visual references pending verified image exports.

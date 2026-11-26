@@ -1,7 +1,8 @@
 <div align="center">
   <img src="src/assets/thoth-logo.jpg" alt="THOTH original ibis mark" width="112" />
   <h1>THOTH</h1>
-  <p><strong>A new way to create, think and write.</strong></p>
+  <p><img src="docs/assets/brand/repository-banner.svg" alt="Create. Connect. Explore. — A new way to create, think and write." width="100%" /></p>
+  <p><strong>Create. Connect. Explore.</strong></p>
   <p>Professional authoring · Creative design · Connected knowledge</p>
   <p><a href="#what-makes-it-different">Experience</a> · <a href="#current-state-vs-intended-capabilities">Status</a> · <a href="#development-direction">Roadmap</a> · <a href="docs/README.md">Documentation</a></p>
   <p><em>Early prototype · React · TypeScript · Not production ready</em></p>
@@ -18,6 +19,10 @@
 These are the intended experience pillars, not a claim that the latest walkthrough is implemented in the repository. See the [design handoff](docs/design/walkthrough.md).
 
 THOTH is a **manual-first, local-first-in-direction professional document studio** for business, technical and creative work. It aims to combine dependable word-processing controls with reusable document systems, project knowledge, researched guidance and optional AI assistance. These are product goals, not claims about the current build.
+
+## Experience preview
+
+Explore the original Canva design references: [workspace concept](https://www.canva.com/d/hhmmqyUgPucLW34), [approved blended theme study](https://www.canva.com/d/4gkdILBLijS5sOw) and [v1.3 user journeys](https://www.canva.com/d/rCGaKjHgZLXKBkv). Canva access may be required. These are design references, not screenshots of implemented functionality. The interactive walkthrough and verified image exports are not yet available in this repository.
 
 ## Why I created THOTH
 
@@ -54,7 +59,7 @@ A complete document should be possible **without AI**. Templates, rules, styles,
 
 ## Development direction
 
-Browser first, with a platform-independent document model and storage/export adapters, then evaluate desktop packaging after the core workflows are stable. BlockNote is installed but the long-term editor-engine decision remains open. Local-first is the target architecture; durable local storage is **not yet established in main**.
+Browser first, with a platform-independent document model and storage/export adapters, then evaluate desktop packaging after the core workflows are stable. BlockNote is declared in the current prototype dependencies but the long-term editor-engine decision remains open. Local-first is the target architecture; durable local storage is **not yet established in main**.
 
 See [PRODUCT.md](PRODUCT.md), [SPECIFICATIONS.md](SPECIFICATIONS.md), [ROADMAP.md](ROADMAP.md), [architecture](docs/architecture/overview.md), [styles and templates](docs/product/styles-templates.md) and [research evidence](docs/research/evidence-register.md).
 
