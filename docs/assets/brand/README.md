@@ -24,3 +24,9 @@ The visible mark is blue with a green eye. The current prototype also uses a mor
 - Explicit usage guidance for placing the product logo vs inserting a user/customer logo into a document.
 
 Do not commit or distribute font files without rights or approval. Branding changes require owner review; this documentation is not authorisation to redesign the mark.
+
+## Authoritative Canva brand kit
+
+The owner confirmed that the existing Canva **Thoth** Brand Kit is authoritative. Kit identifier: `kAHY-Db521w`. Its listing was verified on 26 November 2026; individual logo exports, exact colour values, fonts and approved icon files were not accessible via the available kit listing. The repository raster remains unchanged pending verified exports.
+
+Approved direction: blended navy and forest green, restrained editorial styling, intentional light/dark contrast, original ibis and approved Seshat/AI identity. Do not infer exact hex values or typefaces. Export approved logo variants, banner, social preview and UI icons from Canva, recording source, variant and usage rights. Use only verified walkthrough screenshots for product imagery. A GitHub social preview must be separately configured and verified in repository settings; it is not currently set by this change.
