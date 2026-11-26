@@ -1,6 +1,6 @@
 # THOTH research evidence register
 
-**Status:** initial source inventory from product-planning conversations; this PR has not audited each edition, licence or claim. Do not present candidate profiles as research-validated releases.
+**Status:** candidate source inventory, not validated evidence. Metadata screening on 2026-11-26 identifies selected editions and licence leads; no entry is approved to inform implementation until its exact source, rights, applicability and claim are reviewed. Unknown metadata is explicitly blocking, not assumed.
 
 ## Evidence classification
 
@@ -10,7 +10,7 @@
 - **Community example:** useful comparison, not proof of industry consensus.
 - **THOTH design choice:** product decision inferred from user needs/testing; never mislabel as externally mandated.
 
-## Initial sources and decisions to verify
+## Candidate sources and decisions to verify
 
 | ID | Source | Class | Proposed use | Verification still required |
 | --- | --- | --- | --- | --- |
@@ -25,6 +25,28 @@
 | R-009 | [PDF/UA resources](https://pdfa.org/resource/tag/pdfua/) | Published accessibility guidance | Accessible PDF publishing requirements | Actual target edition/profile and implementation feasibility |
 | R-010 | [BlockNote docs](https://www.blocknotejs.org/docs) | Software documentation | Evaluate current installed editor | Version 0.22 compatibility and licensing |
 | R-011 | [ProseMirror](https://prosemirror.net/docs/) and [Tiptap](https://tiptap.dev/docs) | Software documentation | Editor-engine comparison | Specific candidate versions, licensing and prototype outcomes |
+
+
+## Metadata screening — 2026-11-26
+
+The date below records this screening, not a claim of full-text access or earlier review. “Unpinned” means an exact revision has not been established; “unknown” means permission has not been established. Entries remain candidates until the required record below is complete. No copying or conformance claims are authorised by this table.
+
+| ID | Publisher / source | Edition or revision / publication | Access or screening date | Licence / rights evidence | Status |
+| --- | --- | --- | --- | --- | --- |
+| R-001 | ISO/IEC/IEEE | 29148:2018; 2018 | 2026-11-26, catalogue metadata | ISO publication; reuse rights not established | Candidate; full clauses not reviewed |
+| R-002 | arc42 | Online documentation, unpinned | 2026-11-26, licence metadata | [CC BY-SA 4.0 for template](https://arc42.org/license/); adaptation obligations apply | Candidate; revision and scope pending |
+| R-003 | OpenAPI Initiative | [3.2.1](https://spec.openapis.org/oas/v3.2.1.html), 2026-09-10 | 2026-11-26, specification metadata | Apache-2.0 for specification | Candidate; target version not selected |
+| R-004 | Fountain project | Online syntax, unpinned | 2026-11-26, source discovery | Unknown for documentation reuse | Candidate |
+| R-005 | BBC Writers | Script collection, individual works unpinned | Not accessed in this screening | Unknown; no reuse assumed | Candidate |
+| R-006 | Diátaxis | Online framework, unpinned | Not accessed in this screening | Unknown; no reuse assumed | Candidate |
+| R-007 | US EPA | Quality resource index, specific guidance unselected | Not accessed in this screening | Unknown for selected materials | Candidate |
+| R-008 | W3C | WCAG 2.2, first Recommendation 2023-10-05; exact dated revision pending | 2026-11-26, [publication history](https://www.w3.org/standards/history/WCAG22/) | Document reuse terms not reviewed | Candidate |
+| R-009 | PDF Association / ISO | [ISO 14289-2:2024](https://pdfa.org/iso-14289-2-pdfua-2), 2024; target profile pending | 2026-11-26, catalogue metadata | Sponsored access does not establish redistribution rights | Candidate |
+| R-010 | TypeCellOS / BlockNote | Installed version and exact licence revision pending lockfile audit | 2026-11-26, [upstream licence](https://github.com/TypeCellOS/BlockNote/blob/main/LICENSE.txt) metadata | Current upstream describes MPL-2.0 core and GPL-3.0 XL; verify selected package versions | Candidate |
+| R-011 | ProseMirror and Tiptap maintainers | Candidate versions unselected | 2026-11-26, upstream metadata | [ProseMirror MIT](https://github.com/ProseMirror/prosemirror); [Tiptap open-source MIT](https://tiptap.dev/docs/editor/getting-started/overview); commercial extensions separately assess | Candidate |
+
+**Promotion gate:** a candidate may not support a normative requirement, shipped template or architecture decision as verified research until a reviewer records the exact edition/revision, publication or access date, rights and applicable claim with evidence. Missing fields prevent promotion. Existing proposed uses are research hypotheses only.
+
 
 ## Required record when a finding informs code
 
