@@ -1,9 +1,21 @@
 <div align="center">
-  <img src="src/assets/thoth-logo.jpg" alt="THOTH ibis-head logo" width="112" />
+  <img src="src/assets/thoth-logo.jpg" alt="THOTH original ibis mark" width="112" />
   <h1>THOTH</h1>
-  <p><strong>Professional authoring, structured knowledge, and intelligent assistance.</strong></p>
-  <p><em>Status: early prototype — not production ready.</em></p>
+  <p><strong>A new way to create, think and write.</strong></p>
+  <p>Professional authoring · Creative design · Connected knowledge</p>
+  <p><a href="#what-makes-it-different">Experience</a> · <a href="#current-state-vs-intended-capabilities">Status</a> · <a href="#development-direction">Roadmap</a> · <a href="docs/README.md">Documentation</a></p>
+  <p><em>Early prototype · React · TypeScript · Not production ready</em></p>
 </div>
+
+---
+
+## One connected workspace
+
+| Create | Design | Seshat |
+| :--- | :--- | :--- |
+| Write naturally with dependable manual editing. | Shape documents with flexible layouts and reusable styles. | Explore connected project knowledge and optional reviewed assistance. |
+
+These are the intended experience pillars, not a claim that the latest walkthrough is implemented in the repository. See the [design handoff](docs/design/walkthrough.md).
 
 THOTH is a **manual-first, local-first-in-direction professional document studio** for business, technical and creative work. It aims to combine dependable word-processing controls with reusable document systems, project knowledge, researched guidance and optional AI assistance. These are product goals, not claims about the current build.
 
