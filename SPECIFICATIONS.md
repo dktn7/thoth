@@ -1,13 +1,13 @@
 # THOTH — Product requirements
 
-**Status:** Proposed requirements; not evidence of implementation. **Updated:** 2026-10-16.
+**Status:** Proposed requirements; not evidence of implementation. **Updated:** 2026-11-26.
 
-These requirements derive from the owner's original THOTH conversation and subsequent product refinement. The code on main is an early prototype. A status changes to Implemented only after a linked change and evidence of verification.
+These requirements derive from the owner's original THOTH conversation and subsequent product refinement. The code on main is an early prototype. A status changes to Implemented only after a linked implementation change; Verified requires recorded acceptance-test evidence.
 
 ## Reading requirements
 
 - **P0:** foundation or release-blocking architectural decision; **P1:** important product workflow; **P2:** later expansion.
-- **Status:** Planned / In progress / Verified / Deferred.
+- **Status:** Planned / In progress / Implemented / Verified / Deferred. Planned means not started; In progress means active work; Implemented means a linked implementation exists but acceptance is not yet fully verified; Verified means acceptance criteria have recorded passing evidence; Deferred means intentionally postponed.
 - **Acceptance criteria** are tests to run, not assertions of successful tests. If a requirement references another ID, that dependency must be resolved first.
 - Requirements describe expected behaviour, not a commitment to a particular library. [Product principles](PRODUCT.md) govern trade-offs; [roadmap](ROADMAP.md) supplies sequencing.
 
@@ -19,7 +19,7 @@ These requirements derive from the owner's original THOTH conversation and subse
 - **Rationale:** Prevent format loss and vendor lock-in.
 - **Acceptance:** A document round-trips through serialization with stable IDs, ordered content, metadata, and no content loss.
 - **Priority / status:** P0 / Planned
-- **Dependencies:** CORE-002
+- **Dependencies:** —
 
 ### CORE-002 — Create, open and reopen
 
@@ -27,7 +27,7 @@ These requirements derive from the owner's original THOTH conversation and subse
 - **Rationale:** Writing must survive refreshes.
 - **Acceptance:** Save, reload, and reopen a multi-component document without differences; recovery is tested.
 - **Priority / status:** P0 / Planned
-- **Dependencies:** —
+- **Dependencies:** CORE-001
 
 ### CORE-003 — Autosave and recovery
 
