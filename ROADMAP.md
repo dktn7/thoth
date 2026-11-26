@@ -37,3 +37,7 @@ Milestones overlap only when contracts are explicit and a review accepts the dep
 ## Evidence and prioritisation
 
 The [research register](docs/research/evidence-register.md) records published sources and licensing questions; it is not evidence that every document family has been fully validated. Priorities may change after spikes, user tests, and technical proof.
+
+## Foundation reconciliation gate (26 November 2026)
+
+Before milestone 02, review the existing foundation PR, recover approved walkthrough source and visual assets, reconcile product and architecture decisions against them, verify the Canva brand exports and record a baseline for implementation. See [experience handoff](docs/design/walkthrough.md) and [documentation index](docs/README.md). The next functional milestone remains create → edit → save → reopen → actual page preview → PDF, not further speculative design expansion.
