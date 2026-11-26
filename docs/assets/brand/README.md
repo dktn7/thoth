@@ -27,6 +27,33 @@ Do not commit or distribute font files without rights or approval. Branding chan
 
 ## Authoritative Canva brand kit
 
-The owner confirmed that the existing Canva **Thoth** Brand Kit is authoritative. Kit identifier: `kAHY-Db521w`. Its listing was verified on 26 November 2026; individual logo exports, exact colour values, fonts and approved icon files were not accessible via the available kit listing. The repository raster remains unchanged pending verified exports.
+The owner confirmed that the existing Canva **Thoth** Brand Kit is authoritative. Kit identifier: `kAHY-Db521w`. Its listing was verified on 26 November 2026; individual logo exports, fonts and approved icon files were not accessible via the available kit listing; reference colours were subsequently recovered from the correction design. The repository raster remains unchanged pending verified exports.
 
 Approved direction: blended navy and forest green, restrained editorial styling, intentional light/dark contrast, original ibis and approved Seshat/AI identity. Do not infer exact hex values or typefaces. Export approved logo variants, banner, social preview and UI icons from Canva, recording source, variant and usage rights. Use only verified walkthrough screenshots for product imagery. A GitHub social preview must be separately configured and verified in repository settings; it is not currently set by this change.
+
+## Recovered Canva design decisions — 26 November 2026
+
+Source: [Design Correction, 27 October](https://www.canva.com/d/4gkdILBLijS5sOw) and [Locked Icon Directions](https://www.canva.com/d/gdTO2oBagzTi2xU), read directly from Canva. These are design reference values, not a complete production token system.
+
+| Reference | Hex |
+| --- | --- |
+| Navy | #101D33 |
+| Forest Teal | #123D32 |
+| Deep Forest | #0B302B |
+| Paper | #F5F6F2 |
+| Mist Teal | #DDECE6 |
+
+Dark theme: continuous navy-led blend with forest depth, not a hard green sidebar. Cyan signifies interaction; lime signifies discovery, sparingly. Green is reserved for meaningful save/success contrast. Light mode retains the same structure with paper and mist surfaces; verify accessibility.
+
+Original ibis and wordmark remain unaltered. Seshat uses the historical arch/rosette/staff reference, never the ibis. AI Review uses the supplied blue circuitry-face reference, distinct from native evidence-backed Seshat Insights. The polished v2 AI Review SVG was explicitly rejected on 27 October; do not ship it. Later approval of the reference direction does not establish final SVG sign-off. Test candidates at 16, 20, 24 and 32px in both themes.
+
+### Canva source register
+
+- [Brand Guidelines v1 — Final Review](https://www.canva.com/d/hhmmqyUgPucLW34): concept presentation, including the tagline “Create. Connect. Explore.”
+- [Wordmark](https://www.canva.com/d/qqXmyuuP2R-tTLr): source collection; exact variant selection/export pending.
+- [Design Correction](https://www.canva.com/d/4gkdILBLijS5sOw): supersedes earlier conflicting palette/icon directions.
+- [Locked Icon Directions](https://www.canva.com/d/gdTO2oBagzTi2xU): reference directions, not production vector approval.
+- [Polished Custom Icons](https://www.canva.com/d/y1dUDYeA00vh0Kt): review candidates; apply subsequent correction.
+- [Forest Teal Palette Extension](https://www.canva.com/d/_nowWeg5PNooB1o): proposed, not blanket approval.
+
+Binary exports, exact typography and final vector files remain outstanding; links are owner-access references, not public CDN assets.
