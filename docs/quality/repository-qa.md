@@ -63,7 +63,8 @@ Lychee was selected for external HTTP links and local Markdown/image URLs becaus
 | `python tools/check_docs.py` | 85 local references across 23 Markdown files, 0 errors | Completed locally |
 | `npx --yes markdownlint-cli2@0.24.2 '**/*.md'` | 23 files, 0 issues after focused configuration and spacing fixes | Completed locally |
 | Lychee v0.24.2, 4 concurrent requests, 15-second timeout, 2 retries | 120 references in the docs before this report was added, 48 unique, 118 OK, 0 errors, 2 exact PDF Association exclusions | Completed locally |
-| GitHub Actions on PR head | Awaiting branch publication and workflow run | Pending owner action |
+| GitHub Actions PR run `45995216907` | Local links and Markdown job passed; external job correctly skipped on a PR | Completed |
+| Manual GitHub Actions run `45995252000` | Local job passed; external job failed before link checking because Lychee action v2.7.0 did not locate the nested v0.24.2 binary. Action updated to pinned v2.9.0; rerun pending. | Blocked pending rerun |
 | GitHub appearance, login-wall and destination inspection | Canva redirects checked manually; local logo opened; GitHub light/dark rendering still unverified | Unable to verify in full |
 
 ## Review integrations and limits
