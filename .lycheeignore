@@ -1,0 +1,4 @@
+# PDF Association blocks this unauthenticated HTTP client (403). These exact
+# research references require manual browser verification; see QA report.
+^https://pdfa\.org/resource/tag/pdfua/$
+^https://pdfa\.org/iso-14289-2-pdfua-2$
