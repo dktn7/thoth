@@ -2,3 +2,7 @@
 # research references require manual browser verification; see QA report.
 ^https://pdfa\.org/resource/tag/pdfua/$
 ^https://pdfa\.org/iso-14289-2-pdfua-2$
+# ISO catalogue pages returned 200 with matching titles to the independent
+# unauthenticated probe, but GitHub Actions' Lychee client receives 403.
+^https://www\.iso\.org/standard/72089\.html$
+^https://www\.iso\.org/standard/94091\.html$

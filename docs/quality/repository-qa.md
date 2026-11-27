@@ -31,7 +31,7 @@ The audit searched Markdown links, reference definitions, HTML `href`/`src`, emb
 | Broken / incorrect destination / expired | None confirmed in the retained references. |
 | Unable to verify | Two PDF Association research URLs returned HTTP 403 to the probe. One direct ISO 14289-2 page was accessible through a separate web reader; the PDF/UA tag listing was not. Client blocking is plausible, so neither is labelled removed. |
 
-The PDF Association URLs are exact exceptions in `.lycheeignore`; the [PDF/UA resource listing](https://pdfa.org/resource/tag/pdfua/) and [ISO 14289-2 overview](https://pdfa.org/iso-14289-2-pdfua-2) need browser rechecks when their research entries are promoted. No broad domain exclusion is used. HTTP checks alone cannot detect login walls, misleading content, rights restrictions or visual quality.
+The two PDF Association URLs and two ISO catalogue URLs are exact exceptions in `.lycheeignore`. The [PDF/UA resource listing](https://pdfa.org/resource/tag/pdfua/) and [ISO 14289-2 overview](https://pdfa.org/iso-14289-2-pdfua-2) need browser rechecks when their research entries are promoted. Both ISO catalogue pages returned HTTP 200 and matching titles to the independent unauthenticated probe, but Lychee on GitHub Actions received 403. The ISO catalogue pages likewise need a periodic independent browser/probe recheck. No broad domain exclusion is used. HTTP checks alone cannot detect login walls, misleading content, rights restrictions or visual quality.
 
 ### Corrections
 
@@ -64,7 +64,8 @@ Lychee was selected for external HTTP links and local Markdown/image URLs becaus
 | `npx --yes markdownlint-cli2@0.24.2 '**/*.md'` | 23 files, 0 issues after focused configuration and spacing fixes | Completed locally |
 | Lychee v0.24.2, 4 concurrent requests, 15-second timeout, 2 retries | 120 references in the docs before this report was added, 48 unique, 118 OK, 0 errors, 2 exact PDF Association exclusions | Completed locally |
 | GitHub Actions PR run `45995216907` | Local links and Markdown job passed; external job correctly skipped on a PR | Completed |
-| Manual GitHub Actions run `45995252000` | Local job passed; external job failed before link checking because Lychee action v2.7.0 did not locate the nested v0.24.2 binary. Action updated to pinned v2.9.0; rerun pending. | Blocked pending rerun |
+| Manual GitHub Actions run `45995252000` | Local job passed; external job failed before link checking because Lychee action v2.7.0 did not locate the nested v0.24.2 binary. Action updated to pinned v2.9.0. | Completed: diagnosed and fixed |
+| Manual GitHub Actions run `45995656669` | Local job passed; external job reached 124 references but received four ISO 403 responses across two exact catalogue URLs. Independent unauthenticated probe returned 200 and matching titles. Exact exceptions added; rerun pending. | Blocked pending rerun |
 | GitHub appearance, login-wall and destination inspection | Canva redirects checked manually; local logo opened; GitHub light/dark rendering still unverified | Unable to verify in full |
 
 ## Review integrations and limits
