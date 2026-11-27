@@ -19,6 +19,28 @@ REFERENCE_USE = re.compile(r"!?\[([^\]]+)\]\[([^\]]*)\]")
 HTML_LINK = re.compile(r"\b(?:src|href)\s*=\s*['\"]([^'\"]+)['\"]", re.IGNORECASE)
 HEADING = re.compile(r"^#{1,6}\s+(.+?)\s*#*\s*$", re.MULTILINE)
 INLINE = re.compile(r"<[^>]*>|\[([^\]]+)\]\([^)]*\)|[`*_~]")
+FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,})")
+INLINE_CODE = re.compile(r"(`+)[^\n]*?\1")
+
+
+def without_code(text: str) -> str:
+    """Hide code examples while preserving newlines for link extraction."""
+    lines: list[str] = []
+    fence = ""
+    for line in text.splitlines(keepends=True):
+        marker = FENCE.match(line)
+        if fence:
+            if marker and marker.group(1)[0] == fence[0] and len(marker.group(1)) >= len(fence):
+                fence = ""
+            lines.append("\n" if line.endswith("\n") else "")
+        elif marker:
+            fence = marker.group(1)
+            lines.append("\n" if line.endswith("\n") else "")
+        elif line.startswith(("    ", "\t")):
+            lines.append("\n" if line.endswith("\n") else "")
+        else:
+            lines.append(line)
+    return INLINE_CODE.sub(lambda match: re.sub(r"[^\n]", " ", match.group()), "".join(lines))
 
 
 def slug(value: str) -> str:
@@ -29,7 +51,7 @@ def slug(value: str) -> str:
 
 
 def anchors(path: Path) -> set[str]:
-    text = path.read_text(encoding="utf-8")
+    text = without_code(path.read_text(encoding="utf-8"))
     seen: dict[str, int] = {}
     result: set[str] = set()
     for heading in HEADING.findall(text):
@@ -46,7 +68,7 @@ def main() -> int:
     failures: list[str] = []
     checked = 0
     for source in files:
-        text = source.read_text(encoding="utf-8")
+        text = without_code(source.read_text(encoding="utf-8"))
         definitions = REFERENCE.findall(text)
         labels = {" ".join(label.lower().split()) for label, _ in definitions}
         for label, explicit in REFERENCE_USE.findall(text):
@@ -63,7 +85,7 @@ def main() -> int:
             fragment = unquote(parsed.fragment)
             if not path_part and not fragment:
                 continue
-            destination = (ROOT / path_part.lstrip("/")) if path_part.startswith("/") else (source.parent / path_part)
+            destination = source if not path_part else ((ROOT / path_part.lstrip("/")) if path_part.startswith("/") else (source.parent / path_part))
             destination = destination.resolve()
             checked += 1
             try:

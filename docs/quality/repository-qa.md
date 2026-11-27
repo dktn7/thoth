@@ -54,13 +54,14 @@ The [walkthrough inventory](../assets/walkthrough/README.md) specifies the reque
 
 ## Validation configuration and results
 
-**Completed:** `.github/workflows/docs-quality.yml` runs a local path/anchor checker and markdownlint on relevant pull requests. It runs Lychee on a weekly schedule and by manual dispatch. Jobs have read-only content permission, explicit timeouts, modest HTTP concurrency/retries and third-party actions pinned to commit SHAs verified against their upstream tag references. The external job reports failures but does not become a new branch protection requirement.
+**Completed:** `.github/workflows/docs-quality.yml` runs a local path/anchor checker, its regression tests and markdownlint on relevant pull requests. It runs Lychee on a weekly schedule and by manual dispatch. Jobs have read-only content permission, explicit timeouts, modest HTTP concurrency/retries and third-party actions pinned to commit SHAs verified against their upstream tag references. The external job reports failures but does not become a new branch protection requirement.
 
 Lychee was selected for external HTTP links and local Markdown/image URLs because it is a maintained dedicated link checker with bounded request controls. Markdownlint CLI 0.24.2 was selected for consistent Markdown structure. The first default lint run found 410 issues, mostly existing long prose lines and deliberate README HTML. The config disables only line length, inline HTML and first-line heading rules; existing spacing issues were fixed. The Python checker adds explicit GitHub-style heading anchor and repository path checks.
 
 | Test | Actual result | Status |
 | --- | --- | --- |
 | `python tools/check_docs.py` | 85 local references across 23 Markdown files, 0 errors | Completed locally |
+| `python -m unittest discover -s tools -p 'test_check_docs.py'` | 2 regression tests passed: fragment-only anchors are checked and code examples are ignored | Completed locally |
 | `npx --yes markdownlint-cli2@0.24.2 '**/*.md'` | 23 files, 0 issues after focused configuration and spacing fixes | Completed locally |
 | Lychee v0.24.2, 4 concurrent requests, 15-second timeout, 2 retries | 120 references in the docs before this report was added, 48 unique, 118 OK, 0 errors, 2 exact PDF Association exclusions | Completed locally |
 | GitHub Actions PR run `45995216907` | Local links and Markdown job passed; external job correctly skipped on a PR | Completed |
@@ -72,6 +73,6 @@ Lychee was selected for external HTTP links and local Markdown/image URLs becaus
 
 ## Review integrations and limits
 
-**Completed:** Foundation PR #1 shows a Codex review and a CodeRabbit comment. No integration settings or paid services were changed. On this PR, the CodeRabbit status check passed with “Review skipped: manual review required for this OSS repository”; this is not a completed CodeRabbit review. A passing check is distinct from a completed review of this PR; new review receipts must refer to this branch head.
+**Completed:** Foundation PR #1 shows a Codex review and a CodeRabbit comment. No integration settings or paid services were changed. Codex reviewed this PR at `12bbee6` and identified two real local-checker defects; both were fixed with regression tests. CodeRabbit's passing status said “Review skipped: manual review required for this OSS repository”; a manual review request was accepted and is processing. A passing check is distinct from a completed review. Fresh review receipts must refer to the corrected branch head.
 
 **Pending owner action:** Approve appropriate source artwork for any future walkthrough visuals, inspect the existing social preview for exact-logo consistency, and review this PR before merging. Missing optional artwork does not block Stage 02 work while public documentation remains accurate. The current branch is documentation and QA only; it does not implement application requirements or verify application tests.

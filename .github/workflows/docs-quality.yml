@@ -27,6 +27,8 @@ jobs:
           node-version: '22'
       - name: Check local file, image and heading links
         run: python3 tools/check_docs.py
+      - name: Test documentation link checker
+        run: python3 -m unittest discover -s tools -p 'test_check_docs.py'
       - name: Check Markdown formatting
         run: npx --yes markdownlint-cli2@0.24.2 '**/*.md'
 
