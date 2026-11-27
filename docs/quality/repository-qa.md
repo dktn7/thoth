@@ -64,12 +64,14 @@ Lychee was selected for external HTTP links and local Markdown/image URLs becaus
 | `npx --yes markdownlint-cli2@0.24.2 '**/*.md'` | 23 files, 0 issues after focused configuration and spacing fixes | Completed locally |
 | Lychee v0.24.2, 4 concurrent requests, 15-second timeout, 2 retries | 120 references in the docs before this report was added, 48 unique, 118 OK, 0 errors, 2 exact PDF Association exclusions | Completed locally |
 | GitHub Actions PR run `45995216907` | Local links and Markdown job passed; external job correctly skipped on a PR | Completed |
+| GitHub Actions PR run `45996889423` | Local links and Markdown job passed on the updated workflow; external job correctly skipped | Completed |
 | Manual GitHub Actions run `45995252000` | Local job passed; external job failed before link checking because Lychee action v2.7.0 did not locate the nested v0.24.2 binary. Action updated to pinned v2.9.0. | Completed: diagnosed and fixed |
-| Manual GitHub Actions run `45995656669` | Local job passed; external job reached 124 references but received four ISO 403 responses across two exact catalogue URLs. Independent unauthenticated probe returned 200 and matching titles. Exact exceptions added; rerun pending. | Blocked pending rerun |
+| Manual GitHub Actions run `45995656669` | Local job passed; external job reached 124 references but received four ISO 403 responses across two exact catalogue URLs. Independent unauthenticated probe returned 200 and matching titles. Exact exceptions added. | Completed: diagnosed and fixed |
+| Manual GitHub Actions run `45996885751` | Both jobs passed. Lychee: 124 total references, 49 unique, 116 successful, 8 occurrences of four exact excluded URLs, 0 errors. | Completed |
 | GitHub appearance, login-wall and destination inspection | Canva redirects checked manually; local logo opened; GitHub light/dark rendering still unverified | Unable to verify in full |
 
 ## Review integrations and limits
 
-**Completed:** Foundation PR #1 shows a Codex review and a CodeRabbit comment. No integration settings or paid services were changed. A passing check is distinct from a completed review of this PR; new review receipts must refer to this branch head.
+**Completed:** Foundation PR #1 shows a Codex review and a CodeRabbit comment. No integration settings or paid services were changed. On this PR, the CodeRabbit status check passed with “Review skipped: manual review required for this OSS repository”; this is not a completed CodeRabbit review. A passing check is distinct from a completed review of this PR; new review receipts must refer to this branch head.
 
 **Pending owner action:** Approve appropriate source artwork for any future walkthrough visuals, inspect the existing social preview for exact-logo consistency, and review this PR before merging. Missing optional artwork does not block Stage 02 work while public documentation remains accurate. The current branch is documentation and QA only; it does not implement application requirements or verify application tests.
