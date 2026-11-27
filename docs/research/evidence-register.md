@@ -26,7 +26,6 @@
 | R-010 | [BlockNote docs](https://www.blocknotejs.org/docs) | Software documentation | Evaluate current installed editor | Version 0.22 compatibility and licensing |
 | R-011 | [ProseMirror](https://prosemirror.net/docs/) and [Tiptap](https://tiptap.dev/docs) | Software documentation | Editor-engine comparison | Specific candidate versions, licensing and prototype outcomes |
 
-
 ## Metadata screening — 2026-11-26
 
 The date below records this screening, not a claim of full-text access or earlier review. “Unpinned” means an exact revision has not been established; “unknown” means permission has not been established. Entries remain candidates until the required record below is complete. No copying or conformance claims are authorised by this table.
@@ -48,7 +47,6 @@ The date below records this screening, not a claim of full-text access or earlie
 **Primary-source metadata recheck (2026-11-26):** ISO catalogue, arc42 licence, versioned OpenAPI specification, Fountain syntax/developer pages, Diátaxis overview, EPA directives index, dated W3C recommendation and PDF Association catalogue were checked. These establish identity, selected dates and limited licence metadata only. They do not establish clause-level compliance, permission to reproduce third-party templates, or implementation readiness. BBC access was blocked; exact library versions and transitive licensing still require a dependency audit.
 
 **Promotion gate:** a candidate may not support a normative requirement, shipped template or architecture decision as verified research until a reviewer records the exact edition/revision, publication or access date, rights and applicable claim with evidence. Missing fields prevent promotion. Existing proposed uses are research hypotheses only.
-
 
 ## Required record when a finding informs code
 

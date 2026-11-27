@@ -22,7 +22,7 @@ THOTH is a **manual-first, local-first-in-direction professional document studio
 
 ## Experience preview
 
-Explore the original Canva design references: [workspace concept](https://www.canva.com/d/hhmmqyUgPucLW34), [approved blended theme study](https://www.canva.com/d/4gkdILBLijS5sOw) and [v1.3 user journeys](https://www.canva.com/d/rCGaKjHgZLXKBkv). Canva access may be required. These are design references, not screenshots of implemented functionality. The interactive walkthrough and verified image exports are not yet available in this repository.
+The [experience handoff](docs/design/walkthrough.md) describes the workspace concept, approved navy-to-forest blend and mapped user journeys. These are design decisions, not screenshots of implemented functionality. Approved walkthrough image exports are not yet available in this repository; the [asset inventory](docs/assets/walkthrough/README.md) records what is needed.
 
 ## Why I created THOTH
 

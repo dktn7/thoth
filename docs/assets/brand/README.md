@@ -29,11 +29,11 @@ Do not commit or distribute font files without rights or approval. Branding chan
 
 The owner confirmed that the existing Canva **Thoth** Brand Kit is authoritative. Kit identifier: `kAHY-Db521w`. Its listing was verified on 26 November 2026; individual logo exports, fonts and approved icon files were not accessible via the available kit listing; reference colours were subsequently recovered from the correction design. The repository raster remains unchanged pending verified exports.
 
-Approved direction: blended navy and forest green, restrained editorial styling, intentional light/dark contrast, original ibis and approved Seshat/AI identity. Do not infer exact hex values or typefaces. Export approved logo variants, banner, social preview and UI icons from Canva, recording source, variant and usage rights. Use only verified walkthrough screenshots for product imagery. A GitHub social preview must be separately configured and verified in repository settings; it is not currently set by this change.
+Approved direction: blended navy and forest green, restrained editorial styling, intentional light/dark contrast, original ibis and approved Seshat/AI identity. Do not infer exact logo hex values or typefaces. Export approved logo variants and UI icons from Canva, recording source, variant and usage rights. Use only verified walkthrough screenshots for product imagery. The owner reports that a GitHub social preview has been uploaded; this documentation change preserves it. Its displayed image could not be inspected through the available repository API.
 
 ## Recovered Canva design decisions — 26 November 2026
 
-Source: [Design Correction, 27 October](https://www.canva.com/d/4gkdILBLijS5sOw) and [Locked Icon Directions](https://www.canva.com/d/gdTO2oBagzTi2xU), read directly from Canva. These are design reference values, not a complete production token system.
+Source: the owner's Design Correction (27 October) and Locked Icon Directions, read directly from Canva during the foundation review. Public access is not established. These are design reference values, not a complete production token system.
 
 | Reference | Hex |
 | --- | --- |
@@ -49,15 +49,19 @@ Original ibis and wordmark remain unaltered. Seshat uses the historical arch/ros
 
 ### Canva source register
 
-- [Brand Guidelines v1 — Final Review](https://www.canva.com/d/hhmmqyUgPucLW34): concept presentation, including the tagline “Create. Connect. Explore.”
-- [Wordmark](https://www.canva.com/d/qqXmyuuP2R-tTLr): source collection; exact variant selection/export pending.
-- [Design Correction](https://www.canva.com/d/4gkdILBLijS5sOw): supersedes earlier conflicting palette/icon directions.
-- [Locked Icon Directions](https://www.canva.com/d/gdTO2oBagzTi2xU): reference directions, not production vector approval.
-- [Polished Custom Icons](https://www.canva.com/d/y1dUDYeA00vh0Kt): review candidates; apply subsequent correction.
-- [Forest Teal Palette Extension](https://www.canva.com/d/_nowWeg5PNooB1o): proposed, not blanket approval.
+The following titles identify owner-held design sources. They are intentionally plain text because visitors should not need a Canva account to understand the public documentation.
 
-Binary exports, exact typography and final vector files remain outstanding; links are owner-access references, not public CDN assets.
+| Source | Decision or status |
+| --- | --- |
+| Brand Guidelines v1 — Final Review | Concept presentation with “Create. Connect. Explore.” |
+| Wordmark | Exact variant selection and export pending |
+| Design Correction | Supersedes conflicting earlier palette and icon directions |
+| Locked Icon Directions | Reference directions, not production vector approval |
+| Polished Custom Icons | Review candidates subject to the later correction |
+| Forest Teal Palette Extension | Proposed, not blanket approval |
+
+Binary exports, exact typography and final vector files remain outstanding. The owner can provide approved exports with source/version and usage rights for inclusion here.
 
 ## Repository presentation asset
 
-[repository-banner.svg](repository-banner.svg) is a repository-specific editorial banner using the recovered Canva reference colours (#101D33, #123D32, #F5F6F2, #DDECE6) and approved tagline. It uses generic system font fallbacks; these are **not** approved product typography or a replacement wordmark. The original raster ibis is displayed separately in the README without modification. The banner is newly authored for GitHub, not an original Canva export. Do not use it as a product logo or claim final typography sign-off. The linked Canva workspace/theme/journey designs remain the visual references pending verified image exports.
+[repository-banner.svg](repository-banner.svg) is a repository-specific editorial banner using the recovered Canva reference colours (#101D33, #123D32, #F5F6F2, #DDECE6) and approved tagline. It uses generic system font fallbacks; these are **not** approved product typography or a replacement wordmark. The original raster ibis is displayed separately in the README without modification. The banner is newly authored for GitHub, not an original Canva export. Do not use it as a product logo or claim final typography sign-off. The owner-held workspace, theme and journey designs remain visual references pending verified image exports.

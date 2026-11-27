@@ -35,7 +35,7 @@ See [brand guidance](../assets/brand/README.md), [roadmap](../../ROADMAP.md) and
 
 ## Recovered v1.3 journey contracts
 
-Source: [Canva v1.3 User Journeys & Page States (Draft)](https://www.canva.com/d/rCGaKjHgZLXKBkv), read directly on 26 November 2026. This plan reports 32 existing design routes and 12 mapped journey contracts; it explicitly describes eight below. These counts concern the design plan, not implemented GitHub routes.
+Source: the owner's Canva v1.3 User Journeys & Page States draft, read directly on 26 November 2026. Its public access is not established. The plan reports 32 existing design routes and 12 mapped journey contracts; it explicitly describes eight below. These counts concern the design plan, not implemented GitHub routes.
 
 | ID | Priority | Contract | Critical states |
 | --- | --- | --- | --- |
@@ -52,8 +52,4 @@ Build the five P0 journeys against shared content IDs before adding new top-leve
 
 ## Original visual references
 
-- [Workspace concept presentation](https://www.canva.com/d/hhmmqyUgPucLW34), 7 pages.
-- [Approved blended theme correction](https://www.canva.com/d/4gkdILBLijS5sOw), page 3: existing workspace mockups and light/dark design rules.
-- [v1.3 journey and state plan](https://www.canva.com/d/rCGaKjHgZLXKBkv), 6 pages.
-
-These are original Canva design documents, not a replacement for the interactive walkthrough. The connector exposes previews and text but no stable binary export was obtained. Do not embed expiring thumbnail URLs or present concept imagery as current application screenshots.
+The owner's seven-page workspace concept presentation establishes the tagline and connected experience. Page 3 of the blended theme correction shows workspace mockups and light/dark rules. The six-page v1.3 journey plan maps states and journeys. These are original Canva design documents, not public image assets or a replacement for the interactive walkthrough. No stable approved binary export was obtained. See the [walkthrough asset inventory](../assets/walkthrough/README.md). Do not present concept imagery as current application screenshots.
