@@ -64,7 +64,10 @@ def anchors(path: Path) -> set[str]:
 
 
 def main() -> int:
-    files = sorted(ROOT.rglob("*.md"))
+    files = sorted(
+        path for path in ROOT.rglob("*.md")
+        if "node_modules" not in path.relative_to(ROOT).parts
+    )
     failures: list[str] = []
     checked = 0
     for source in files:

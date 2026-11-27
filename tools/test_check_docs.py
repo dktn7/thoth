@@ -36,6 +36,24 @@ class DocumentationLinksTest(unittest.TestCase):
         self.assertEqual(result, 0, output)
         self.assertIn("0 errors", output)
 
+    def test_dependency_readmes_are_outside_repository_docs(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            (root / "README.md").write_text("# Public\n", encoding="utf-8")
+            package = root / "node_modules" / "example"
+            package.mkdir(parents=True)
+            (package / "README.md").write_text("[missing](not-in-package.md)\n", encoding="utf-8")
+            original = check_docs.ROOT
+            check_docs.ROOT = root
+            try:
+                output = io.StringIO()
+                with contextlib.redirect_stdout(output):
+                    result = check_docs.main()
+                self.assertEqual(result, 0, output.getvalue())
+                self.assertIn("across 1 Markdown files", output.getvalue())
+            finally:
+                check_docs.ROOT = original
+
 
 if __name__ == "__main__":
     unittest.main()
