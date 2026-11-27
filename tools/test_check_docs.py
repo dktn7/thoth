@@ -30,6 +30,10 @@ class DocumentationLinksTest(unittest.TestCase):
         self.assertIn("missing heading #absent", output)
         self.assertIn("missing heading #also-absent", output)
 
+    def test_inline_code_contributes_to_heading_anchor(self) -> None:
+        result, output = self.check("# Using `THOTH`\n\n[Section](#using-thoth)\n")
+        self.assertEqual(result, 0, output)
+
     def test_examples_are_not_checked_as_links(self) -> None:
         markdown = "# Present\n\n`[inline](missing.md)`\n\n```markdown\n[fenced](also-missing.md)\n```\n\n    [indented](missing-too.md)\n\n[real](#present)\n"
         result, output = self.check(markdown)

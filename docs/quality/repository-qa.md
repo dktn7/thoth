@@ -61,7 +61,7 @@ Lychee was selected for external HTTP links and local Markdown/image URLs becaus
 | Test | Actual result | Status |
 | --- | --- | --- |
 | `python tools/check_docs.py` | 85 local references across 23 Markdown files, 0 errors | Completed locally |
-| `python -m unittest discover -s tools -p 'test_check_docs.py'` | 3 regression tests passed: fragment-only anchors are checked, code examples are ignored, and dependency READMEs are excluded | Completed locally |
+| `python -m unittest discover -s tools -p 'test_check_docs.py'` | 4 regression tests passed: fragment-only anchors, inline code in headings, code examples and dependency README scope | Completed locally |
 | `npx --yes markdownlint-cli2@0.24.2 '**/*.md'` | 23 files, 0 issues after focused configuration and spacing fixes | Completed locally |
 | Lychee v0.24.2, 4 concurrent requests, 15-second timeout, 2 retries | 120 references in the docs before this report was added, 48 unique, 118 OK, 0 errors, 2 exact PDF Association exclusions | Completed locally |
 | GitHub Actions PR run `45995216907` | Local links and Markdown job passed; external job correctly skipped on a PR | Completed |
@@ -73,6 +73,6 @@ Lychee was selected for external HTTP links and local Markdown/image URLs becaus
 
 ## Review integrations and limits
 
-**Completed:** Foundation PR #1 shows a Codex review and a CodeRabbit comment. No integration settings or paid services were changed. Codex reviewed this PR at `12bbee6` and identified two real local-checker defects; both were fixed with regression tests. CodeRabbit's passing status said “Review skipped: manual review required for this OSS repository”; a manual request then produced a completed review with two minor checker findings. Code example handling was already fixed; the dependency README scan was corrected with a third regression test. A passing check is distinct from a completed review. Fresh review receipts must refer to the corrected branch head.
+**Completed:** Foundation PR #1 shows a Codex review and a CodeRabbit comment. No integration settings or paid services were changed. Codex review found fragment-only anchors, code examples and inline-code heading slugs needing fixes; each has a regression test. CodeRabbit's passing status said “Review skipped: manual review required for this OSS repository”; a manual request then produced a completed review with two minor checker findings. Code example handling was already fixed; the dependency README scan was corrected with a regression test. A passing check is distinct from a completed review. Fresh review receipts must refer to the corrected branch head.
 
 **Pending owner action:** Approve appropriate source artwork for any future walkthrough visuals, inspect the existing social preview for exact-logo consistency, and review this PR before merging. Missing optional artwork does not block Stage 02 work while public documentation remains accurate. The current branch is documentation and QA only; it does not implement application requirements or verify application tests.

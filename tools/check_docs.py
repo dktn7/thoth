@@ -23,7 +23,7 @@ FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,})")
 INLINE_CODE = re.compile(r"(`+)[^\n]*?\1")
 
 
-def without_code(text: str) -> str:
+def without_code(text: str, *, inline: bool = True) -> str:
     """Hide code examples while preserving newlines for link extraction."""
     lines: list[str] = []
     fence = ""
@@ -40,7 +40,8 @@ def without_code(text: str) -> str:
             lines.append("\n" if line.endswith("\n") else "")
         else:
             lines.append(line)
-    return INLINE_CODE.sub(lambda match: re.sub(r"[^\n]", " ", match.group()), "".join(lines))
+    visible = "".join(lines)
+    return INLINE_CODE.sub(lambda match: re.sub(r"[^\n]", " ", match.group()), visible) if inline else visible
 
 
 def slug(value: str) -> str:
@@ -51,7 +52,7 @@ def slug(value: str) -> str:
 
 
 def anchors(path: Path) -> set[str]:
-    text = without_code(path.read_text(encoding="utf-8"))
+    text = without_code(path.read_text(encoding="utf-8"), inline=False)
     seen: dict[str, int] = {}
     result: set[str] = set()
     for heading in HEADING.findall(text):
